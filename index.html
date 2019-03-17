@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="spd.thepixelplaces.com">
+  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+  <title>SPEEDY | By SPD the Super Pixel Dev.</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="material.indigo-pink.min.css">
+  <style>
+	html {
+	  height: 100%;
+	}
+
+	html, body {
+	  width: 100%;
+	  padding: 0;
+	  margin: 0;
+	}
+
+	body {
+	  min-height: auto;
+	  box-sizing: border-box;
+	}
+
+	header {
+	  padding: 55px 0 25px 0;
+	  //background-color: #00bcd4;
+	  background-color: #009688;
+	  color: white;
+	  text-align: center;
+	}
+
+	main, header > h1 {
+	  padding: 0 16px;
+	  max-width: 760px;
+	  box-sizing: border-box;
+	  margin: 0 auto;
+	}
+
+	main {
+	  margin: 24px auto;
+	  box-sizing: border-box;
+	  text-align: center;
+	}
+
+	pre {
+	  white-space: pre-wrap;
+	  background-color: #EEEEEE;
+	  //background-color: #009688;
+	  padding: 16px;
+	}
+
+	pre code {
+	  word-break: break-word;
+	}
+
+	.is-invisible {
+	  opacity: 0;
+	}
+
+	.subscription-details {
+	  transition: opacity 1s;
+	}
+
+	@media (max-width: 600px) {
+	  header > h1 {
+		font-size: 36px;
+	  }
+	}
+  </style>
+  
+	<link rel="manifest" href="/manifest.json" />
+  
+	<script>
+	  if (location.protocol != 'https:') {
+		//location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+	  }
+	</script>
+	
+</head>
+
+<body>
+
+  <header>
+    <h1>SPEEDY</h1>
+	<h5 style="margin-top:2px">By SPD the Super Pixel Dev.</h5>
+  </header>
+
+  <main>
+    <p>Add SPEEDY to your home screen!</p>
+	<ul>
+		<li>Android: Tap [Add] when the home dialog displays.</li>
+	</ul>
+    <div style="text-align:center">
+	  <p><a class="mdl-button" href="https://speedy.spd.thepixelplaces.com/">Visit SPEEDY</a></p>
+    </div>
+  </main>
+
+  <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+</body>
+
+<script>
+ if ('serviceWorker' in navigator) {
+    console.log("Will the service worker register?");
+    navigator.serviceWorker.register('service-worker.js')
+      .then(function(reg){
+        console.log("Yes, it did.");
+     }).catch(function(err) {
+        console.log("No it didn't. This happened:", err)
+    });
+ }
+</script>
+
+</html>

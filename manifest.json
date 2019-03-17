@@ -1,0 +1,30 @@
+{
+  "short_name": "SPEEDY",
+  "name": "SPEEDY",
+  "theme_color": "#009688",
+  "background_color": "#000000",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "https://speedy.spd.thepixelplaces.com/icon/res/mipmap-mdpi/SPEEDY.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "https://speedy.spd.thepixelplaces.com/icon/res/mipmap-xhdpi/SPEEDY.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "https://speedy.spd.thepixelplaces.com/icon/res/mipmap-xxhdpi/SPEEDY.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "https://speedy.spd.thepixelplaces.com/icon/res/mipmap-xxxhdpi/SPEEDY.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "https://speedy.spd.thepixelplaces.com/?utm_source=launcher"
+}
