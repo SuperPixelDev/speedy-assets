@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+	</head>
+	<style>
+		* {
+			box-sizing: border-box;
+			font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+		}
+
+		#SPDInput {
+			width: 100%;
+			font-size: 16px;
+			padding: 12px 20px 12px 40px;
+			border: 1px solid #ddd;
+			margin-bottom: 12px;
+		}
+
+		#SPDTable {
+			border-collapse: collapse;
+			width: 100%;
+			border: 1px solid #ddd;
+			font-size: 18px;
+		}
+
+		#SPDTable th, #SPDTable td {
+			text-align: left;
+			padding: 12px;
+			font-size: 15px;
+		}
+
+		#SPDTable tr {
+			border-bottom: 1px solid #ddd;
+		}
+
+		#SPDTable tr.header, #SPDTable tr:hover {
+			background-color: #f1f1f1;
+		}
+	</style>
+		<script>
+		
+		function setCookie(cname, cvalue) {
+		  var d = new Date();
+		  d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
+		  var expires = "expires="+d.toUTCString();
+		  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+		}
+
+		function getCookie(cname) {
+		  var name = cname + "=";
+		  var ca = document.cookie.split(';');
+		  for(var i = 0; i < ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ') {
+			  c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+			  return c.substring(name.length, c.length);
+			}
+		  }
+		  return "";
+		}
+		
+		</script>
+</head>
+
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false" id="span_SPDDiv">
+
+	<input type="text" id="SPDInput" onkeyup="myFunction()" placeholder="Search for the app..." title="Search for the app...">
+
+	<script>
+		var ck_speedy_target = getCookie('speedy_target');
+		var ck_speedy_name = getCookie('speedy_name');
+				
+		function SPD_EduApp_School_Add(target, name, domain) {
+			if (domain == 'none') {
+				document.write('<tr onclick="SPD_EduApp_School_Go('+"'"+target+"'"+', '+"'"+name+"'"+');"><td>'+name+'</td></tr>');
+			}
+			else {
+				document.write('<tr onclick="SPD_EduApp_School_Go('+"'"+target+"'"+', '+"'"+name+"'"+');"><td>'+name+' <small>['+domain+']</small></td></tr>');
+			}
+		}
+		
+		function SPEEDY_Server_Add(x,y,z) {
+			SPD_EduApp_School_Add(x,y,z);
+		}
+		
+		function SPD_EduApp_School_Go(target, name) {
+			setCookie('speedy_target', target);
+			setCookie('speedy_name', name);
+			window.open('https://speedy.spd.thepixelplaces.com/?user_change=true&app='+target+'&app_name='+name, '_blank');
+			document.getElementById('span_SPDDiv').innerHTML = '<center><h2>SPEEDY Session Terminated</h2><p>This session is terminated for some reasons. Please <a href="https://speedy.spd.thepixelplaces.com/" target="_blank">click here</a> to go to the main page.</p></center>';
+		}
+	</script>
+	
+	<table id="SPDTable">
+		<script>
+			//SPEEDY_Server_Add('speedy', 'SPEEDY Introduction', 'speedy.spd.thepixelplaces.com');
+			if (ck_speedy_target != '') {
+				if (ck_speedy_name == '') {
+					ck_speedy_name = '[Unknown]';
+				}
+				SPEEDY_Server_Add(ck_speedy_target, ck_speedy_name, 'Previously selected server');
+			}
+		</script>
+		<script src="https://assets.speedy.spd.thepixelplaces.com/config/server-list.js"></script>
+	</table>
+
+	<script>
+	function myFunction() {
+	  var input, filter, table, tr, td, i;
+	  input = document.getElementById("SPDInput");
+	  filter = input.value.toUpperCase();
+	  table = document.getElementById("SPDTable");
+	  tr = table.getElementsByTagName("tr");
+	  for (i = 0; i < tr.length; i++) {
+		td = tr[i].getElementsByTagName("td")[0];
+		if (td) {
+		  if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+			tr[i].style.display = "";
+		  } else {
+			tr[i].style.display = "none";
+		  }
+		}       
+	  }
+	}
+	</script>
+
+</body>
+</html>
