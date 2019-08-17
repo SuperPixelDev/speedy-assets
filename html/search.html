@@ -6,6 +6,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+		<script src="https://vpsc.upsilos.com/js/GetURLParam.min.js"></script>
 	</head>
 	<style>
 		* {
@@ -43,6 +44,8 @@
 		}
 	</style>
 		<script>
+		
+		var speedy_app = VPSC_GetURL_Param('app', '');
 		
 		function setCookie(cname, cvalue) {
 		  var d = new Date();
@@ -93,7 +96,12 @@
 		function SPD_EduApp_School_Go(target, name) {
 			setCookie('speedy_target', target);
 			setCookie('speedy_name', name);
-			window.open('http://speedy.spd.thepixelplaces.com/?user_change=true&app='+target+'&app_name='+name, '_blank');
+			if (speedy_app == 'true') {
+				window.AppInventor.setWebViewString(target);
+			}
+			else {
+				window.open('https://speedy.spd.thepixelplaces.com/?user_change=true&app='+target+'&app_name='+name, '_blank');
+			}
 			document.getElementById('span_SPDDiv').innerHTML = '<center><h2>SPEEDY Session Terminated</h2><p>This session is terminated. Please <a href="https://speedy.spd.thepixelplaces.com/" target="_blank">click here</a> to go to the main page.</p></center>';
 		}
 	</script>
